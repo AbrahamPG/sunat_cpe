@@ -1,0 +1,60 @@
+{
+  "name": "facturator",
+  "version": "0.2.0",
+  "description": "SDK en TypeScript para generar, firmar, validar y enviar comprobantes electrónicos a SUNAT.",
+  "license": "MIT",
+
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/AbrahamPG/sunat_cpe.git"
+  },
+
+  "keywords": [
+  "sunat",
+  "cpe",
+  "facturacion-electronica",
+  "facturacion-electronica-peru",
+  "typescript",
+  "nodejs",
+  "peru"
+  ],
+  "type": "module",
+
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "xsd",
+    "wsdl"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "build:test": "tsc -p tsconfig.test.json",
+    "test:sunat": "yarn build:test && node dist/test/sunat.js"
+  },
+  "dependencies": {
+    "@xmldom/xmldom": "^0.9.12",
+    "archiver": "6.0.2",
+    "soap": "^1.13.2",
+    "unzipper": "^0.12.5",
+    "xerces-wasm": "^2.0.2",
+    "xml-crypto": "^6.3.2",
+    "xmlbuilder2": "^4.0.3",
+    "xpath": "^0.0.34"
+  },
+  "devDependencies": {
+    "@types/archiver": "^8.0.0",
+    "@types/node": "^26.6.4",
+    "@types/unzipper": "^0.10.11",
+    "@types/xmldom": "^0.1.34",
+    "dotenv": "^18.0.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
